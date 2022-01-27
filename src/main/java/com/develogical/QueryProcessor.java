@@ -25,8 +25,18 @@ public class QueryProcessor {
             return "21";
         }
 
-        if (query.toLowerCase().contains("which of the following numbers is the largest: 23, 99, 756, 59")) {
-            return "756";
+        if (query.toLowerCase().contains("which of the following numbers is the largest: ")) {
+            String[] numbers = query.substring(46).replace(" ", "").split(",");
+            int max = Integer.parseInt(numbers[0]);
+            for (String number : numbers) {
+                int num = Integer.parseInt(number);
+
+                if (num > max) {
+                    max = num;
+                }
+            }
+
+            return String.valueOf(max);
         }
 
         return "";
