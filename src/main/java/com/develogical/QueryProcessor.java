@@ -48,6 +48,15 @@ public class QueryProcessor {
             return String.valueOf(a + b);
         }
 
+        if (query.toLowerCase().contains("minus")) {
+            String[] numbers = query.replace("what is ", "").replace(" ", "").split("minus");
+
+            int a = Integer.parseInt(numbers[0]);
+            int b = Integer.parseInt(numbers[1]);
+
+            return String.valueOf(a - b);
+        }
+
         if (query.toLowerCase().contains("which of the following numbers is the largest: ")) {
             String[] numbers = query.substring(46).replace(" ", "").split(",");
             int max = Integer.parseInt(numbers[0]);

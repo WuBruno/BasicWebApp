@@ -45,9 +45,21 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void knowsSquareRoot() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 602, 36"),
+                containsString("30"));
+    }
+
+    @Test
     public void knows3() throws Exception {
         assertThat(queryProcessor.process("which of the following numbers is the largest: 23, 99, 756, 59"),
                 containsString("756"));
+    }
+
+    @Test
+    public void knowsMinus() throws Exception {
+        assertThat(queryProcessor.process("what is 10 minus 12"),
+                containsString("-2"));
     }
 
     @Test
