@@ -17,6 +17,10 @@ public class QueryProcessor {
             return "Bruno is a student at Imperial College London";
         }
 
+        if (query.toLowerCase().contains("your name")) {
+            return "BW";
+        }
+
         return "";
     }
 }
