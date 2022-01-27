@@ -3,6 +3,8 @@ package com.develogical;
 public class QueryProcessor {
 
     public String process(String query) {
+        query = query.substring(10);
+
         if (query.toLowerCase().contains("shakespeare")) {
             return "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
                     "English poet, playwright, and actor, widely regarded as the greatest " +
@@ -22,6 +24,7 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("plus")) {
+            System.out.println(query);
             String[] numbers = query.replace("what is ", "").replace(" ", "").split("plus");
 
             int a = Integer.parseInt(numbers[0]);
@@ -37,15 +40,6 @@ public class QueryProcessor {
             int b = Integer.parseInt(numbers[1]);
 
             return String.valueOf(a * b);
-        }
-
-        if (query.toLowerCase().contains("plus")) {
-            String[] numbers = query.replace("what is ", "").replace(" ", "").split("plus");
-
-            int a = Integer.parseInt(numbers[0]);
-            int b = Integer.parseInt(numbers[1]);
-
-            return String.valueOf(a + b);
         }
 
         if (query.toLowerCase().contains("minus")) {
