@@ -63,6 +63,13 @@ public class QueryProcessorTest {
                 containsString("-2"));
     }
 
+    // @Test
+    // public void knowsFib() throws Exception {
+    // assertThat(queryProcessor.process("what is the 13th number in the Fibonacci
+    // sequence"),
+    // containsString("-2"));
+    // }
+
     @Test
     public void isNotCaseSensitive() throws Exception {
         assertThat(queryProcessor.process("shakespeare"), containsString("playwright"));
