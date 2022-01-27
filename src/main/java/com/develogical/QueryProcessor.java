@@ -21,8 +21,13 @@ public class QueryProcessor {
             return "BW";
         }
 
-        if (query.toLowerCase().contains("what is 9 plus 12")) {
-            return "21";
+        if (query.toLowerCase().contains("plus")) {
+            String[] numbers = query.replace("what is ", "").replace(" ", "").split("plus");
+
+            int a = Integer.parseInt(numbers[0]);
+            int b = Integer.parseInt(numbers[1]);
+
+            return String.valueOf(a + b);
         }
 
         if (query.toLowerCase().contains("which of the following numbers is the largest: ")) {
